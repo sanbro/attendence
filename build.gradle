@@ -18,10 +18,33 @@ repositories {
 }
 
 dependencies {
+	//Equips your application with production-ready features for monitoring and managing health, status, metrics, and more.
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	//Simplifies the development of Spring-based applications requiring data source access. Built on the Java Persistence API (JPA), it offers a convenient way to handle data in relational databases.
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	//Facilitates the construction of RESTful applications using the Spring MVC framework.
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	runtimeOnly 'com.mysql:mysql-connector-j'
+
+	//A database migration tool that simplifies versioning and management of changes to your database schema.
+	implementation 'org.flywaydb:flyway-core'
+	implementation 'org.flywaydb:flyway-database-postgresql'
+
+	// An annotation processor operating at compile time, Lombok reduces a lot of boilerplate code such as getters, setters, and toString().
+	compileOnly 'org.projectlombok:lombok'
+
+	//Empowers Java applications to establish connections and interact seamlessly with PostgreSQL databases.
+	runtimeOnly 'org.postgresql:postgresql'
+
+	//An annotation processor operating at compile time, Lombok reduces a lot of boilerplate code such as getters, setters, and toString(). this is for annotations generation.
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// test dependencies to create unit and integration tests for spring
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
 }
 
 tasks.named('test') {
