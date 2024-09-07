@@ -11,7 +11,8 @@ import org.springframework.stereotype.Repository;
  * represents the entity, while “Integer”
  * signifies the data type of the identifier for this entity.
  */
-@Repository
+
 public interface UserRepo extends JpaRepository<User, Integer> {
+
 
 }
