@@ -16,9 +16,9 @@ import java.util.List;
 @Table(name = "users")
 public class User {
     @Id
-   // @GeneratedValue(generator = "Incremental")
-   // @GenericGenerator(name = "Incremental", strategy = "org.hibernate.id.IncrementGenerator")
-   // @Column(name = "id", updatable = false, nullable = false, insertable = false, unique = true)
+    @GeneratedValue(generator = "Incremental")
+   @GenericGenerator(name = "Incremental", strategy = "org.hibernate.id.IncrementGenerator")
+    @Column(name = "id", updatable = false, nullable = false, insertable = false, unique = true)
     private Integer id;
     private String name;
     private String password;
