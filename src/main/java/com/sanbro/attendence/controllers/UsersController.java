@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -82,6 +83,7 @@ public class UsersController {
      * @return Updated User
      */
     @PutMapping("/")
+    //@PreAuthorize("hasAuthority('SCOPE_updateuser')")//TODO: scope base permissions
     public ResponseEntity<User> updateUser(@RequestBody User user) {
         return ResponseEntity.ok().body(userService.updateUser(user));
     }
