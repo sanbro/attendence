@@ -37,6 +37,11 @@ public class UserService {
         return optionalUser.orElse(null);
     }
 
+    public User getUserByName(String name){
+        Optional<User> optionalUser = userRepo.findByName(name);
+        return optionalUser.orElse(null);
+    }
+
     public User saveUser(User user) {
         user.setCreatedAt(LocalDateTime.now());
         user.setUpdatedAt(LocalDateTime.now());

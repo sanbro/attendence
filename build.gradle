@@ -36,6 +36,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 
+	implementation 'com.mashape.unirest:unirest-java:1.4.9'
+
+	implementation 'com.okta.spring:okta-spring-boot-starter:3.0.7'
+
 
 	// An annotation processor operating at compile time, Lombok reduces a lot of boilerplate code such as getters, setters, and toString().
 	compileOnly 'org.projectlombok:lombok'
@@ -49,6 +53,7 @@ dependencies {
 	// test dependencies to create unit and integration tests for spring
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
 
 
 
